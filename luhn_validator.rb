@@ -15,6 +15,7 @@ module LuhnValidator
       next unless even
 
       even *= 2
+      # mod 10 & left+right
       even = even.divmod(10).inject(:+) if even > 9
       sum += even
     end
